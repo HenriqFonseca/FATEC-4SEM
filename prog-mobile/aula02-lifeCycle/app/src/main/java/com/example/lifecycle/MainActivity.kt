@@ -7,6 +7,7 @@ import androidx.activity.ComponentActivity
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.main_layout)
         Log.v("lifeCycle", "Activity criada - onCreate()")
     }
 
