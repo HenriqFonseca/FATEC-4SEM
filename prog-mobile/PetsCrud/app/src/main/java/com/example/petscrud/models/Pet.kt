@@ -1,9 +1,10 @@
 package com.example.petscrud.models
 
-data class Pet (
+import java.time.LocalDate
 
+data class Pet (
     var name : String = "",
     var race : String = "",
-    var weight : String = "",
-    var date : String = ""
+    var weight : Float = 0.0f,
+    var date : LocalDate = LocalDate.now()
 )

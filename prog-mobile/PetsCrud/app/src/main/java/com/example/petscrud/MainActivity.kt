@@ -7,13 +7,13 @@ import android.widget.EditText
 import androidx.activity.ComponentActivity
 import com.example.petscrud.models.Pet
 import com.google.gson.Gson
-import okhttp3.OkHttpClient
+import java.time.LocalDate
 
 class MainActivity : ComponentActivity(){
     val URL_BASE = "https://restapikotlin-default-rtdb.firebaseio.com/"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.create_layout)
+        setContentView(R.layout.pet_layout)
         val rawName = findViewById<EditText>(R.id.edtName)
         val rawRace = findViewById<EditText>(R.id.edtRace)
         val rawWeith = findViewById<EditText>(R.id.edtWeight)
@@ -29,7 +29,7 @@ class MainActivity : ComponentActivity(){
                 name = rawName.text.toString(),
                 race = rawRace.text.toString(),
                 weight = rawWeith.text.toString(),
-                date = rawDate.text.toString()
+                date = LocalDate.now()
             )
             val petJson = gson.toJson(pet)
             Log.d("JSONTESTEPORRARARA", "Json: $petJson")
